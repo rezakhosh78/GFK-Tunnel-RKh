@@ -1,4 +1,4 @@
-#RKh-Tunnel
+# GFK-RKh
 Fork of [SamNet-dev/paqctl](https://github.com/SamNet-dev/paqctl)
 
 ## Installation
