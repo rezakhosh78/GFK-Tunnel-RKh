@@ -3,7 +3,9 @@ Fork of [SamNet-dev/paqctl](https://github.com/SamNet-dev/paqctl)
 
 ## Installation
 
-1. Copy the `paqctl` folder to `/opt/paqctl`:
+1. Create folder `paqctl` and paste files into it.
+
+2. Copy the `paqctl` folder to `/opt/paqctl`:
 
 ```bash
 sudo cp -r paqctl /opt/paqctl
@@ -12,13 +14,13 @@ sudo chmod -R 755 /opt/paqctl
 ln -s /opt/paqctl/paqctl /usr/local/bin/paqctl
 ```
 
-2. Run paqctl:
+3. Run paqctl:
 
 ```bash
 paqctl
 ```
 
-3. Check the service status:
+4. Check the service status:
 
 ```bash
 systemctl status paqctl
@@ -34,9 +36,9 @@ scp -r /opt/paqctl root@ip_Destination:/opt/
 
 ## Timer to Restart Service (Iran VPS)
 
-Create a systemd service to restart `paqctl` every 5 minutes:
+Create a systemd service to restart `paqctl` every 5 minutes.
 
-1. Create the service file:
+### 1. Create the service file:
 
 ```bash
 sudo nano /etc/systemd/system/paqctl-restart.service
@@ -53,7 +55,7 @@ Type=oneshot
 ExecStart=/bin/systemctl restart paqctl
 ```
 
-2. Create the timer file:
+### 2. Create the timer file:
 
 ```bash
 sudo nano /etc/systemd/system/paqctl-restart.timer
@@ -74,7 +76,7 @@ Unit=paqctl-restart.service
 WantedBy=timers.target
 ```
 
-3. Enable and start the timer:
+### 3. Enable and start the timer:
 
 ```bash
 sudo systemctl daemon-reload
@@ -82,9 +84,7 @@ sudo systemctl enable --now paqctl-restart.timer
 sudo systemctl status paqctl-restart.timer
 ```
 
-4. View logs:
+### 4. View logs:
 
 ```bash
-journalctl -u paqctl-restart.service -f
-```
-
+journalct
