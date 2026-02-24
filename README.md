@@ -87,4 +87,4 @@ sudo systemctl status paqctl-restart.timer
 ### 4. View logs:
 
 ```bash
-journalct
+journalctl -u paqctl-restart.service -f
